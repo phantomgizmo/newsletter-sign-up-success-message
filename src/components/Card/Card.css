@@ -1,4 +1,8 @@
-.card {
+/* :root {
+  --li-logo: url("./src/assets/images/icon-list.svg");
+} */
+
+/* .card {
   --clr-blue-700: hsl(235, 18%, 26%);
   --clr-blue-800: hsl(234, 29%, 20%);
   --clr-gray: hsl(0, 0%, 58%);
@@ -24,9 +28,9 @@
 
 .card-body__header {
   font-size: 2.5rem;
-}
+} */
 
-.card-body__list li {
+/* .card-body__list li {
   position: relative;
 
   list-style: none;
@@ -41,8 +45,9 @@
   position: absolute;
   top: 0;
   left: -2.5rem;
-}
+} */
 
+/*
 .card-body__form {
   display: flex;
   flex-direction: column;
@@ -97,4 +102,4 @@
 
 .btn-submit:active {
   background-color: var(--clr-btn-submit-active);
-}
+} */

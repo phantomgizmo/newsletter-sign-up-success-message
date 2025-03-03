@@ -1,7 +1,7 @@
 import React from "react";
 import { FieldError } from "react-hook-form";
 
-import "./Input.css";
+// import "./Input.css";
 
 interface InputProps {
   type: string;
@@ -19,22 +19,24 @@ const Input: React.FC<InputProps> = ({
 }) => {
   return (
     <>
-      <div className="form-group">
-        <label className="form-group__label">Email address</label>
-        <Input
-          className="form-group__input"
-          type="email"
-          placeholder="email@company.com"
-          error={form.formState.errors?.email}
-          {...form.register("email")}
+      <div className="flex flex-col gap-3">
+        <div className="flex items-center justify-between">
+          <label className="text-sm font-bold">Email address</label>
+          {error ? (
+            <span className="text-sm font-bold text-[#bc7f7a]">
+              Valid email required
+            </span>
+          ) : (
+            <></>
+          )}
+        </div>
+        <input
+          className={`${className} ${error ? "border-[#bc7f7a] bg-[#fee8e6] placeholder:text-[#bc7f7a]" : ""}`.trim()}
+          type={type}
+          placeholder={placeholder}
+          {...props}
         />
       </div>
-      <input
-        className={`${className}  ${error ? "input-error" : ""}`}
-        type={type}
-        placeholder={placeholder}
-        {...props}
-      />
     </>
   );
 };

@@ -4,8 +4,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
 import "./Card.css";
-import Input from "../Input/Input";
-import SignUpFormData from "../../types/SignUpFormData";
+import Input from "@/components/Input/Input";
+import SignUpFormData from "@/types/SignUpFormData";
 
 function Card() {
   const SignUpFormSchema: ZodType<SignUpFormData> = z.object({
@@ -22,7 +22,7 @@ function Card() {
   };
 
   return (
-    <div className="card">
+    <div className="flex flex-col gap-3 font-[roboto]">
       <header>
         <picture>
           <source
@@ -40,31 +40,34 @@ function Card() {
           />
         </picture>
       </header>
-      <section className="card-body">
-        <h1 className="card-body__header">Stay updated!</h1>
+      <section className="flex flex-col gap-4 p-4">
+        <h1 className="text-[2.5rem] font-bold">Stay updated!</h1>
         <p>
           Stay updated! Join 60,000+ product managers receiving monthly updates
           on:
         </p>
         <ul className="card-body__list">
-          <li>Product discovery and building what matters</li>
-          <li>Measuring to ensure updates are a success</li>
-          <li>And much more!</li>
+          <li className="relative mb-3 list-none ps-8 before:absolute before:top-0 before:left-0 before:block before:transform-[scale(0.85)] before:content-[url('@/assets/images/icon-list.svg')]">
+            Product discovery and building what matters
+          </li>
+          <li className="relative mb-3 list-none ps-8 before:absolute before:top-0 before:left-0 before:block before:transform-[scale(0.85)] before:content-[url('@/assets/images/icon-list.svg')]">
+            Measuring to ensure updates are a success
+          </li>
+          <li className="relative mb-3 list-none ps-8 before:absolute before:top-0 before:left-0 before:block before:transform-[scale(0.85)] before:content-[url('@/assets/images/icon-list.svg')]">
+            And much more!
+          </li>
         </ul>
         <form
           className="card-body__form"
           onSubmit={form.handleSubmit(onSubmit)}
         >
-          <div className="form-group">
-            <label className="form-group__label">Email address</label>
-            <Input
-              className="form-group__input"
-              type="email"
-              placeholder="email@company.com"
-              error={form.formState.errors?.email}
-              {...form.register("email")}
-            />
-          </div>
+          <Input
+            className="rounded-sm border border-solid p-4 outline-0"
+            type="email"
+            placeholder="email@company.com"
+            error={form.formState.errors?.email}
+            {...form.register("email")}
+          />
           {form.formState.errors?.email ? <span>error</span> : <></>}
           <button className="btn-submit" type="submit">
             Subscribe to monthly newsletter
