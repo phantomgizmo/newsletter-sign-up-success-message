@@ -1,0 +1,11 @@
+.input-error {
+  --clr-input-error: #bc7f7a;
+  --clr-input-error-bg: #fee8e6;
+
+  border-color: var(--clr-input-error);
+  background-color: var(--clr-input-error-bg);
+}
+
+.input-error::placeholder {
+  color: var(--clr-input-error);
+}
