@@ -1,8 +1,6 @@
 import React from "react";
 import { FieldError } from "react-hook-form";
 
-// import "./Input.css";
-
 interface InputProps {
   type: string;
   placeholder: string;
