@@ -3,10 +3,14 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import { useForm } from "react-hook-form";
 
-import Input from "@/components/Input/Input";
+import Input from "@/components/ui/Input";
 import SignUpFormData from "@/types/SignUpFormData";
+import { useNavigate } from "react-router-dom";
+import Button from "@/components/ui/Button";
 
 function SignUp() {
+  const navigate = useNavigate();
+
   const SignUpFormSchema: ZodType<SignUpFormData> = z.object({
     email: z.string().email(),
   });
@@ -18,14 +22,15 @@ function SignUp() {
 
   const onSubmit = (data: SignUpFormData) => {
     console.log(data);
+    navigate("/success/" + data.email);
   };
 
   return (
-    <div className="flex flex-col gap-3 font-[roboto]">
-      <header>
+    <div className="mx-auto flex max-w-(--breakpoint-sm) flex-col gap-3 bg-white font-[roboto] sm:rounded-2xl sm:p-4 sm:shadow-lg md:max-w-[900px] md:flex-row-reverse md:items-center">
+      <header className="mx-auto">
         <picture>
           <source
-            media="(max-width: 684px)"
+            media="(max-width: 825px)"
             type="image/svg+xml"
             srcSet="/src/assets/images/illustration-sign-up-mobile.svg"
           />
@@ -39,8 +44,10 @@ function SignUp() {
           />
         </picture>
       </header>
-      <section className="flex flex-col gap-4 p-4">
-        <h1 className="text-[2.5rem] font-bold">Stay updated!</h1>
+      <section className="flex flex-col gap-4 p-4 md:items-baseline md:px-8">
+        <h1 className="text-[2.5rem] font-bold md:text-[3.5rem]">
+          Stay updated!
+        </h1>
         <p>
           Stay updated! Join 60,000+ product managers receiving monthly updates
           on:
@@ -57,22 +64,17 @@ function SignUp() {
           </li>
         </ul>
         <form
-          className="flex flex-col gap-6"
+          className="flex flex-col gap-6 md:w-full"
           onSubmit={form.handleSubmit(onSubmit)}
         >
           <Input
-            className="rounded-sm border border-solid p-4 outline-0"
+            className="rounded-sm border border-solid p-4 outline-0 hover:cursor-pointer"
             type="email"
             placeholder="email@company.com"
             error={form.formState.errors?.email}
             {...form.register("email")}
           />
-          <button
-            className="hover:text-gray cursor-pointer rounded-lg bg-blue-800 py-5 text-white outline-0 active:bg-blue-700"
-            type="submit"
-          >
-            Subscribe to monthly newsletter
-          </button>
+          <Button type="submit">Subscribe to monthly newsletter</Button>
         </form>
       </section>
     </div>

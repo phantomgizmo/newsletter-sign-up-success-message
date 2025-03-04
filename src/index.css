@@ -7,6 +7,9 @@
   --color-blue-800: hsl(234, 29%, 20%);
   --color-gray: hsl(0, 0%, 58%);
   --color-white: hsl(0, 0%, 100%);
+
+  --breakpoint-sm: 395px;
+  --breakpoint-md: 825px;
 }
 
 /* Box sizing rules */

@@ -1,10 +1,11 @@
-import SignUp from "./components/SignUp/SignUp";
+import AppRouter from "./routes";
+import AppProvider from "./providers";
 
 function App() {
   return (
-    <>
-      <SignUp />
-    </>
+    <AppProvider>
+      <AppRouter />
+    </AppProvider>
   );
 }
 
