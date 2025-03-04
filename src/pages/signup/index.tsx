@@ -8,6 +8,10 @@ import SignUpFormData from "@/types/SignUpFormData";
 import { useNavigate } from "react-router-dom";
 import Button from "@/components/ui/Button";
 
+import illustSignUpMobile from "@/assets/images/illustration-sign-up-mobile.svg";
+import illustSignUpDesktop from "@/assets/images/illustration-sign-up-desktop.svg";
+import iconList from "@/assets/images/icon-list.svg";
+
 function SignUp() {
   const navigate = useNavigate();
 
@@ -32,16 +36,10 @@ function SignUp() {
           <source
             media="(max-width: 825px)"
             type="image/svg+xml"
-            srcSet="/src/assets/images/illustration-sign-up-mobile.svg"
+            srcSet={illustSignUpMobile}
           />
-          <source
-            type="image/svg+xml"
-            srcSet="/src/assets/images/illustration-sign-up-desktop.svg"
-          />
-          <img
-            src="/src/assets/images/illustration-sign-up-mobile.svg"
-            alt=""
-          />
+          <source type="image/svg+xml" srcSet={illustSignUpDesktop} />
+          <img src={illustSignUpMobile} alt="" />
         </picture>
       </header>
       <section className="flex flex-col gap-4 p-4 md:items-baseline md:px-8">
@@ -53,13 +51,19 @@ function SignUp() {
           on:
         </p>
         <ul className="card-body__list">
-          <li className="relative mb-3 list-none ps-8 before:absolute before:top-0 before:left-0 before:block before:transform-[scale(0.85)] before:content-[url('@/assets/images/icon-list.svg')]">
+          <li
+            className={`relative mb-3 list-none ps-8 before:absolute before:top-0 before:left-0 before:block before:transform-[scale(0.85)] before:content-[url(${iconList})]`}
+          >
             Product discovery and building what matters
           </li>
-          <li className="relative mb-3 list-none ps-8 before:absolute before:top-0 before:left-0 before:block before:transform-[scale(0.85)] before:content-[url('@/assets/images/icon-list.svg')]">
+          <li
+            className={`relative mb-3 list-none ps-8 before:absolute before:top-0 before:left-0 before:block before:transform-[scale(0.85)] before:content-[url(${iconList})]`}
+          >
             Measuring to ensure updates are a success
           </li>
-          <li className="relative mb-3 list-none ps-8 before:absolute before:top-0 before:left-0 before:block before:transform-[scale(0.85)] before:content-[url('@/assets/images/icon-list.svg')]">
+          <li
+            className={`relative mb-3 list-none ps-8 before:absolute before:top-0 before:left-0 before:block before:transform-[scale(0.85)] before:content-[url(${iconList})]`}
+          >
             And much more!
           </li>
         </ul>
