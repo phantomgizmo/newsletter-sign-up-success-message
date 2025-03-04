@@ -1,9 +1,9 @@
-import Card from "./components/Card/Card";
+import SignUp from "./components/Card/SignUp";
 
 function App() {
   return (
     <>
-      <Card />
+      <SignUp />
     </>
   );
 }

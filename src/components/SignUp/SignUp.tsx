@@ -3,11 +3,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import { useForm } from "react-hook-form";
 
-import "./Card.css";
 import Input from "@/components/Input/Input";
 import SignUpFormData from "@/types/SignUpFormData";
 
-function Card() {
+function SignUp() {
   const SignUpFormSchema: ZodType<SignUpFormData> = z.object({
     email: z.string().email(),
   });
@@ -58,7 +57,7 @@ function Card() {
           </li>
         </ul>
         <form
-          className="card-body__form"
+          className="flex flex-col gap-6"
           onSubmit={form.handleSubmit(onSubmit)}
         >
           <Input
@@ -68,8 +67,10 @@ function Card() {
             error={form.formState.errors?.email}
             {...form.register("email")}
           />
-          {form.formState.errors?.email ? <span>error</span> : <></>}
-          <button className="btn-submit" type="submit">
+          <button
+            className="hover:text-gray cursor-pointer rounded-lg bg-blue-800 py-5 text-white outline-0 active:bg-blue-700"
+            type="submit"
+          >
             Subscribe to monthly newsletter
           </button>
         </form>
@@ -78,4 +79,4 @@ function Card() {
   );
 }
 
-export default Card;
+export default SignUp;
