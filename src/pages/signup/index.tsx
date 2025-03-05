@@ -10,7 +10,6 @@ import Button from "@/components/ui/Button";
 
 import illustSignUpMobile from "@/assets/images/illustration-sign-up-mobile.svg";
 import illustSignUpDesktop from "@/assets/images/illustration-sign-up-desktop.svg";
-import iconList from "@/assets/images/icon-list.svg";
 
 function SignUp() {
   const navigate = useNavigate();
@@ -52,17 +51,17 @@ function SignUp() {
         </p>
         <ul className="card-body__list">
           <li
-            className={`relative mb-3 list-none ps-8 before:absolute before:top-0 before:left-0 before:block before:transform-[scale(0.85)] before:content-[url(${iconList})]`}
+            className={`relative mb-3 list-none ps-8 before:absolute before:top-0 before:left-0 before:block before:transform-[scale(0.85)] before:content-[url('@/assets/images/icon-list.svg')]`}
           >
             Product discovery and building what matters
           </li>
           <li
-            className={`relative mb-3 list-none ps-8 before:absolute before:top-0 before:left-0 before:block before:transform-[scale(0.85)] before:content-[url(${iconList})]`}
+            className={`relative mb-3 list-none ps-8 before:absolute before:top-0 before:left-0 before:block before:transform-[scale(0.85)] before:content-[url('@/assets/images/icon-list.svg')]`}
           >
             Measuring to ensure updates are a success
           </li>
           <li
-            className={`relative mb-3 list-none ps-8 before:absolute before:top-0 before:left-0 before:block before:transform-[scale(0.85)] before:content-[url(${iconList})]`}
+            className={`relative mb-3 list-none ps-8 before:absolute before:top-0 before:left-0 before:block before:transform-[scale(0.85)] before:content-[url('@/assets/images/icon-list.svg')]`}
           >
             And much more!
           </li>
